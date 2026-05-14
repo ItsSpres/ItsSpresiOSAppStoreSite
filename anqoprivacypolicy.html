@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -15,433 +14,428 @@
       padding: 0;
     }
 
-```
-:root {
-  --bg:        #0b0b0c;
-  --surface:   #111114;
-  --border:    #1e1e22;
-  --muted:     #3a3a40;
-  --text:      #d6d6d8;
-  --text-dim:  #5f5f66;
-  --accent:    #5b8dee;
-  --accent-dim:#2a3f6b;
-  --white:     #f0f0f2;
-  --mono:      'DM Mono', monospace;
-  --sans:      'Sora', sans-serif;
-  --radius:    6px;
-}
+    :root {
+      --bg:        #0b0b0c;
+      --surface:   #111114;
+      --border:    #1e1e22;
+      --muted:     #3a3a40;
+      --text:      #d6d6d8;
+      --text-dim:  #5f5f66;
+      --accent:    #5b8dee;
+      --accent-dim:#2a3f6b;
+      --white:     #f0f0f2;
+      --mono:      'DM Mono', monospace;
+      --sans:      'Sora', sans-serif;
+      --radius:    6px;
+    }
 
-html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.7;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.4;
-}
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
 
-.wrap {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 0 28px;
-  position: relative;
-  z-index: 1;
-}
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 1;
+    }
 
-hr.rule {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 0;
-}
+    hr.rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
 
-/* Nav */
-nav {
-  padding: 28px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  animation: fadeUp 0.6s ease both;
-}
+    /* Nav */
+    nav {
+      padding: 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: fadeUp 0.6s ease both;
+    }
 
-.nav-logo {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: var(--text-dim);
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.nav-logo:hover { color: var(--white); }
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-logo:hover { color: var(--white); }
 
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-.nav-links a {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-dim);
-  text-decoration: none;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-dim);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
 
-/* Hero */
-.hero {
-  padding: 80px 0 72px;
-  animation: fadeUp 0.7s 0.1s ease both;
-}
+    /* Hero */
+    .hero {
+      padding: 80px 0 72px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
 
-.hero-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
 
-.hero h1 {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: clamp(28px, 4vw, 40px);
-  color: var(--white);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-}
+    .hero h1 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: clamp(28px, 4vw, 40px);
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
 
-.hero p {
-  color: var(--text-dim);
-  font-size: 13px;
-  font-family: var(--mono);
-}
+    .hero p {
+      color: var(--text-dim);
+      font-size: 13px;
+      font-family: var(--mono);
+    }
 
-/* Content */
-.content {
-  padding-bottom: 100px;
-}
+    /* Content */
+    .content {
+      padding-bottom: 100px;
+    }
 
-.policy-block {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-bottom: 1px;
-  animation: fadeUp 0.6s ease both;
-}
+    .policy-block {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 1px;
+      animation: fadeUp 0.6s ease both;
+    }
 
-.policy-block + .policy-block {
-  margin-top: 12px;
-}
+    .policy-block + .policy-block {
+      margin-top: 12px;
+    }
 
-.policy-header {
-  background: var(--surface);
-  padding: 20px 24px 16px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
+    .policy-header {
+      background: var(--surface);
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
 
-.policy-num {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--text-dim);
-  letter-spacing: 0.1em;
-  flex-shrink: 0;
-}
+    .policy-num {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+    }
 
-.policy-header h2 {
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 14px;
-  color: var(--white);
-  letter-spacing: -0.01em;
-}
+    .policy-header h2 {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
 
-.policy-body {
-  background: var(--surface);
-  padding: 20px 24px 24px;
-}
+    .policy-body {
+      background: var(--surface);
+      padding: 20px 24px 24px;
+    }
 
-.policy-body p {
-  font-size: 14px;
-  color: var(--text-dim);
-  line-height: 1.75;
-  margin-bottom: 12px;
-}
+    .policy-body p {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
 
-.policy-body p:last-child {
-  margin-bottom: 0;
-}
+    .policy-body p:last-child {
+      margin-bottom: 0;
+    }
 
-.policy-body ul {
-  list-style: none;
-  margin: 8px 0 12px;
-}
+    .policy-body ul {
+      list-style: none;
+      margin: 8px 0 12px;
+    }
 
-.policy-body ul li {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-dim);
-  padding: 6px 0;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
+    .policy-body ul li {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-dim);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
 
-.policy-body ul li:last-child {
-  border-bottom: none;
-}
+    .policy-body ul li:last-child {
+      border-bottom: none;
+    }
 
-.policy-body ul li::before {
-  content: '—';
-  color: var(--muted);
-  flex-shrink: 0;
-}
+    .policy-body ul li::before {
+      content: '—';
+      color: var(--muted);
+      flex-shrink: 0;
+    }
 
-.policy-body a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-.policy-body a:hover { opacity: 0.7; }
+    .policy-body a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .policy-body a:hover { opacity: 0.7; }
 
-.highlight-box {
-  background: var(--accent-dim);
-  border: 1px solid #3a5fa8;
-  border-radius: var(--radius);
-  padding: 14px 18px;
-  margin-bottom: 14px;
-}
+    .highlight-box {
+      background: var(--accent-dim);
+      border: 1px solid #3a5fa8;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 14px;
+    }
 
-.highlight-box p {
-  color: #a8c4f5 !important;
-  font-size: 13px !important;
-  margin: 0 !important;
-}
+    .highlight-box p {
+      color: #a8c4f5 !important;
+      font-size: 13px !important;
+      margin: 0 !important;
+    }
 
-/* Updated tag */
-.updated-tag {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--text-dim);
-  background: var(--border);
-  padding: 3px 8px;
-  border-radius: 2px;
-  letter-spacing: 0.06em;
-  margin-top: 8px;
-}
+    /* Updated tag */
+    .updated-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      background: var(--border);
+      padding: 3px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      margin-top: 8px;
+    }
 
-/* Footer */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 28px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.footer-left {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-dim);
-}
+    .footer-left {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+    }
 
-.footer-right {
-  display: flex;
-  gap: 24px;
-}
+    .footer-right {
+      display: flex;
+      gap: 24px;
+    }
 
-.footer-right a {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-dim);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-right a:hover { color: var(--white); }
+    .footer-right a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-right a:hover { color: var(--white); }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-@media (max-width: 600px) {
-  .nav-links { gap: 20px; }
-  footer { flex-direction: column; gap: 12px; text-align: center; }
-  .footer-right { gap: 16px; }
-}
-```
-
+    @media (max-width: 600px) {
+      .nav-links { gap: 20px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+      .footer-right { gap: 16px; }
+    }
   </style>
 </head>
 <body>
 
   <div class="wrap">
 
-```
-<!-- Nav -->
-<nav>
-  <a class="nav-logo" href="/">ItsSpres</a>
-  <ul class="nav-links">
-    <li><a href="/#apps">Apps</a></li>
-    <li><a href="https://itsspres.com/support">Support</a></li>
-    <li><a href="https://github.com/ItsSpres" target="_blank">GitHub ↗</a></li>
-  </ul>
-</nav>
-
-<hr class="rule" />
-
-<!-- Hero -->
-<section class="hero">
-  <p class="hero-label">Legal</p>
-  <h1>Privacy Policy</h1>
-  <p>Anqo — by Ian Spresney</p>
-  <span class="updated-tag">Last updated: May 2026</span>
-</section>
-
-<hr class="rule" style="margin-bottom: 48px;" />
-
-<!-- Policy Content -->
-<section class="content">
-
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">01</span>
-      <h2>Overview</h2>
-    </div>
-    <div class="policy-body">
-      <div class="highlight-box">
-        <p>Anqo does not collect personal data. Your flashcards, decks, and study data are stored on-device and synced privately via iCloud. Ads are served by Google AdMob.</p>
-      </div>
-      <p>This Privacy Policy explains how Anqo ("the app") handles your information. By using Anqo, you agree to the practices described here.</p>
-    </div>
-  </div>
-
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">02</span>
-      <h2>On-Device Processing</h2>
-    </div>
-    <div class="policy-body">
-      <p>The following features are processed entirely on your device and do not transmit data to Ian Spresney or any external server:</p>
-      <ul>
-        <li>All flashcard and deck creation, editing, and review</li>
-        <li>AI-powered import and quiz generation via Apple Intelligence</li>
-        <li>Importing from Anki (.apkg), Quizlet, and other sources</li>
-        <li>Study statistics and streak tracking</li>
+    <!-- Nav -->
+    <nav>
+      <a class="nav-logo" href="/">ItsSpres</a>
+      <ul class="nav-links">
+        <li><a href="/#apps">Apps</a></li>
+        <li><a href="https://itsspres.com/support">Support</a></li>
+        <li><a href="https://github.com/ItsSpres" target="_blank">GitHub ↗</a></li>
       </ul>
-    </div>
-  </div>
+    </nav>
 
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">03</span>
-      <h2>iCloud Sync (CloudKit)</h2>
-    </div>
-    <div class="policy-body">
-      <p>Anqo uses Apple CloudKit to sync your decks, cards, and study progress across your Apple devices. This data is stored in your personal iCloud account and is not accessible to Ian Spresney.</p>
-      <p>iCloud sync is subject to Apple's privacy policy, available at <a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a>. You can disable iCloud sync at any time in your device's Settings.</p>
-    </div>
-  </div>
+    <hr class="rule" />
 
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">04</span>
-      <h2>Apple Intelligence & AI Features</h2>
-    </div>
-    <div class="policy-body">
-      <p>AI-powered features in Anqo — including note import and quiz generation — use Apple Intelligence and run entirely on-device. No content you provide is sent to Ian Spresney or any third-party AI service.</p>
-      <p>Apple Intelligence requires a compatible device and is governed by Apple's privacy policy.</p>
-    </div>
-  </div>
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-label">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p>Anqo — by Ian Spresney</p>
+      <span class="updated-tag">Last updated: May 2026</span>
+    </section>
 
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">05</span>
-      <h2>Advertising (Google AdMob)</h2>
-    </div>
-    <div class="policy-body">
-      <p>Anqo uses Google AdMob to display advertisements. AdMob may collect and use data to serve ads, including device identifiers and usage data, in accordance with Google's privacy policy.</p>
-      <p>You can review Google's data practices at <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>. Users in applicable regions may be shown a consent prompt for personalized ads as required by law.</p>
-      <p>Upgrading to a premium subscription removes all ads.</p>
-    </div>
-  </div>
+    <hr class="rule" style="margin-bottom: 48px;" />
 
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">06</span>
-      <h2>Purchases</h2>
-    </div>
-    <div class="policy-body">
-      <p>In-app purchases and subscriptions are processed entirely by Apple via the App Store. Ian Spresney does not receive or store your payment information. Purchase records are managed by Apple and subject to Apple's privacy policy.</p>
-    </div>
-  </div>
+    <!-- Policy Content -->
+    <section class="content">
 
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">07</span>
-      <h2>Children's Privacy</h2>
-    </div>
-    <div class="policy-body">
-      <p>Anqo does not knowingly collect personal data from any user. Note that Google AdMob may collect advertising identifiers as described in section 05. If you are a parent or guardian with concerns, you can disable personalized ads in your device's Privacy settings.</p>
-    </div>
-  </div>
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">01</span>
+          <h2>Overview</h2>
+        </div>
+        <div class="policy-body">
+          <div class="highlight-box">
+            <p>Anqo does not collect personal data. Your flashcards, decks, and study data are stored on-device and synced privately via iCloud. Ads are served by Google AdMob.</p>
+          </div>
+          <p>This Privacy Policy explains how Anqo ("the app") handles your information. By using Anqo, you agree to the practices described here.</p>
+        </div>
+      </div>
 
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">08</span>
-      <h2>Changes to This Policy</h2>
-    </div>
-    <div class="policy-body">
-      <p>If this Privacy Policy changes in a material way, the updated version will be posted at this URL with a revised date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
-    </div>
-  </div>
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">02</span>
+          <h2>On-Device Processing</h2>
+        </div>
+        <div class="policy-body">
+          <p>The following features are processed entirely on your device and do not transmit data to Ian Spresney or any external server:</p>
+          <ul>
+            <li>All flashcard and deck creation, editing, and review</li>
+            <li>AI-powered import and quiz generation via Apple Intelligence</li>
+            <li>Importing from Anki (.apkg), Quizlet, and other sources</li>
+            <li>Study statistics and streak tracking</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="policy-block">
-    <div class="policy-header">
-      <span class="policy-num">09</span>
-      <h2>Contact</h2>
-    </div>
-    <div class="policy-body">
-      <p>Questions about this policy? Reach out via the <a href="https://itsspres.com/support">support page</a>.</p>
-    </div>
-  </div>
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">03</span>
+          <h2>iCloud Sync (CloudKit)</h2>
+        </div>
+        <div class="policy-body">
+          <p>Anqo uses Apple CloudKit to sync your decks, cards, and study progress across your Apple devices. This data is stored in your personal iCloud account and is not accessible to Ian Spresney.</p>
+          <p>iCloud sync is subject to Apple's privacy policy, available at <a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a>. You can disable iCloud sync at any time in your device's Settings.</p>
+        </div>
+      </div>
 
-</section>
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">04</span>
+          <h2>Apple Intelligence & AI Features</h2>
+        </div>
+        <div class="policy-body">
+          <p>AI-powered features in Anqo — including note import and quiz generation — use Apple Intelligence and run entirely on-device. No content you provide is sent to Ian Spresney or any third-party AI service.</p>
+          <p>Apple Intelligence requires a compatible device and is governed by Apple's privacy policy.</p>
+        </div>
+      </div>
 
-<hr class="rule" />
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">05</span>
+          <h2>Advertising (Google AdMob)</h2>
+        </div>
+        <div class="policy-body">
+          <p>Anqo uses Google AdMob to display advertisements. AdMob may collect and use data to serve ads, including device identifiers and usage data, in accordance with Google's privacy policy.</p>
+          <p>You can review Google's data practices at <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>. Users in applicable regions may be shown a consent prompt for personalized ads as required by law.</p>
+          <p>Upgrading to a premium subscription removes all ads.</p>
+        </div>
+      </div>
 
-<!-- Footer -->
-<footer>
-  <span class="footer-left">© <span id="year"></span> Ian Spresney</span>
-  <div class="footer-right">
-    <a href="https://github.com/ItsSpres" target="_blank">GitHub</a>
-    <a href="https://itsspres.com/support">Support</a>
-    <a href="/#apps">Apps</a>
-  </div>
-</footer>
-```
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">06</span>
+          <h2>Purchases</h2>
+        </div>
+        <div class="policy-body">
+          <p>In-app purchases and subscriptions are processed entirely by Apple via the App Store. Ian Spresney does not receive or store your payment information. Purchase records are managed by Apple and subject to Apple's privacy policy.</p>
+        </div>
+      </div>
+
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">07</span>
+          <h2>Children's Privacy</h2>
+        </div>
+        <div class="policy-body">
+          <p>Anqo does not knowingly collect personal data from any user. Note that Google AdMob may collect advertising identifiers as described in section 05. If you are a parent or guardian with concerns, you can disable personalized ads in your device's Privacy settings.</p>
+        </div>
+      </div>
+
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">08</span>
+          <h2>Changes to This Policy</h2>
+        </div>
+        <div class="policy-body">
+          <p>If this Privacy Policy changes in a material way, the updated version will be posted at this URL with a revised date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+        </div>
+      </div>
+
+      <div class="policy-block">
+        <div class="policy-header">
+          <span class="policy-num">09</span>
+          <h2>Contact</h2>
+        </div>
+        <div class="policy-body">
+          <p>Questions about this policy? Reach out via the <a href="https://itsspres.com/support">support page</a>.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="rule" />
+
+    <!-- Footer -->
+    <footer>
+      <span class="footer-left">© <span id="year"></span> Ian Spresney</span>
+      <div class="footer-right">
+        <a href="https://github.com/ItsSpres" target="_blank">GitHub</a>
+        <a href="https://itsspres.com/support">Support</a>
+        <a href="/#apps">Apps</a>
+      </div>
+    </footer>
 
   </div>
 
