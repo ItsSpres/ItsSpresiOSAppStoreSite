@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Anqo</title>
+  <title>Legal — Anqo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -279,6 +279,41 @@
     }
     .footer-right a:hover { color: var(--white); }
 
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: var(--surface);
+      border: none;
+      padding: 12px 20px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .tab-btn:hover { color: var(--white); }
+
+    .tab-btn.active {
+      background: var(--accent-dim);
+      color: #a8c4f5;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -310,7 +345,7 @@
     <!-- Hero -->
     <section class="hero">
       <p class="hero-label">Legal</p>
-      <h1>Privacy Policy</h1>
+      <h1>Privacy & Terms</h1>
       <p>Anqo — by Ian Spresney</p>
       <span class="updated-tag">Last updated: May 2026</span>
     </section>
@@ -320,6 +355,14 @@
     <!-- Policy Content -->
     <section class="content">
 
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('privacy', this)">Privacy Policy</button>
+        <button class="tab-btn" onclick="switchTab('terms', this)">Terms & Conditions</button>
+      </div>
+
+      <!-- Privacy Panel -->
+      <div id="tab-privacy" class="tab-panel active">
       <div class="policy-block">
         <div class="policy-header">
           <span class="policy-num">01</span>
@@ -423,6 +466,139 @@
         </div>
       </div>
 
+      </div><!-- /tab-privacy -->
+
+      <!-- Terms Panel -->
+      <div id="tab-terms" class="tab-panel">
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">01</span>
+            <h2>Acceptance of Terms</h2>
+          </div>
+          <div class="policy-body">
+            <p>By downloading or using Anqo, you agree to be bound by these Terms & Conditions. If you do not agree, do not use the app. These terms apply to all users of Anqo.</p>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">02</span>
+            <h2>License to Use</h2>
+          </div>
+          <div class="policy-body">
+            <p>Ian Spresney grants you a limited, non-exclusive, non-transferable, revocable license to use Anqo for personal, non-commercial purposes on Apple devices you own or control, subject to these terms and Apple's App Store Terms of Service.</p>
+            <p>You may not copy, modify, distribute, sell, or sublicense any part of the app.</p>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">03</span>
+            <h2>Your Content</h2>
+          </div>
+          <div class="policy-body">
+            <p>You retain ownership of any flashcard content, decks, and notes you create in Anqo. Because all content is stored locally on your device and in your personal iCloud account, Ian Spresney has no access to or claim over your content.</p>
+            <p>You are responsible for ensuring that any content you import or create does not infringe third-party copyrights or violate applicable laws.</p>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">04</span>
+            <h2>Subscriptions & Purchases</h2>
+          </div>
+          <div class="policy-body">
+            <p>Anqo offers optional in-app subscriptions that unlock premium features and remove ads. Subscriptions are billed through your Apple ID account and are subject to Apple's payment terms.</p>
+            <ul>
+              <li>Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period</li>
+              <li>You can manage or cancel subscriptions in your Apple ID account settings</li>
+              <li>Refunds are handled by Apple in accordance with their refund policy</li>
+              <li>Free trial periods, if offered, convert to paid subscriptions unless cancelled before the trial ends</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">05</span>
+            <h2>Advertising</h2>
+          </div>
+          <div class="policy-body">
+            <p>Free users may see advertisements served by Google AdMob. By using the free version of Anqo, you agree to the display of ads. Upgrading to a premium subscription removes all advertising.</p>
+            <p>Ian Spresney is not responsible for the content of third-party advertisements.</p>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">06</span>
+            <h2>Acceptable Use</h2>
+          </div>
+          <div class="policy-body">
+            <p>You agree not to use Anqo to:</p>
+            <ul>
+              <li>Violate any applicable laws or regulations</li>
+              <li>Infringe the intellectual property rights of others</li>
+              <li>Attempt to reverse engineer, decompile, or tamper with the app</li>
+              <li>Use the app in any way that could damage or impair its functionality</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">07</span>
+            <h2>Disclaimer of Warranties</h2>
+          </div>
+          <div class="policy-body">
+            <p>Anqo is provided "as is" without warranties of any kind, express or implied. Ian Spresney does not warrant that the app will be error-free, uninterrupted, or free of bugs. Use of the app is at your own risk.</p>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">08</span>
+            <h2>Limitation of Liability</h2>
+          </div>
+          <div class="policy-body">
+            <p>To the fullest extent permitted by law, Ian Spresney shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of Anqo, including loss of data.</p>
+            <p>You are responsible for maintaining backups of your content. iCloud sync is provided as a convenience and does not guarantee against data loss.</p>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">09</span>
+            <h2>Changes to These Terms</h2>
+          </div>
+          <div class="policy-body">
+            <p>These Terms may be updated at any time. The updated version will be posted at this URL with a revised date. Continued use of Anqo after changes are posted constitutes your acceptance of the new terms.</p>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">10</span>
+            <h2>Governing Law</h2>
+          </div>
+          <div class="policy-body">
+            <p>These Terms are governed by the laws of the United States. Any disputes arising from use of Anqo shall be subject to the exclusive jurisdiction of the courts in Ian Spresney's state of residence.</p>
+          </div>
+        </div>
+
+        <div class="policy-block">
+          <div class="policy-header">
+            <span class="policy-num">11</span>
+            <h2>Contact</h2>
+          </div>
+          <div class="policy-body">
+            <p>Questions about these terms? Reach out via the <a href="https://itsspres.com/support">support page</a>.</p>
+          </div>
+        </div>
+
+      </div><!-- /tab-terms -->
+
     </section>
 
     <hr class="rule" />
@@ -441,6 +617,13 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function switchTab(name, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + name).classList.add('active');
+      btn.classList.add('active');
+    }
   </script>
 
 </body>
