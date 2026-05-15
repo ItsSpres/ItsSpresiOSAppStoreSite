@@ -273,12 +273,12 @@ nav{
   flex-shrink:0;
   border:1px solid rgba(255,255,255,.06);
 }
-.app-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  display: block;
+.app-icon img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:inherit;
+  display:block;
 }
 .icon-live{background:linear-gradient(135deg,#1c1c42,#0e0e26)}
 .icon-wip{background:linear-gradient(135deg,#0e2e1c,#091a0f)}
@@ -619,6 +619,12 @@ nav{
   resize:vertical;
   min-height:92px;
 }
+.h-captcha{
+  margin:4px 0;
+}
+.h-captcha iframe{
+  max-width:100%;
+}
 .form-submit{
   display:flex;
   align-items:center;
@@ -645,29 +651,6 @@ nav{
 .btn-submit:hover{
   background:transparent;
   color:var(--amber);
-}
-.form-success{
-  display:none;
-  background:rgba(0,212,170,.08);
-  border:1px solid var(--teal);
-  border-radius:4px;
-  padding:36px 24px;
-  text-align:center;
-}
-.form-success.show{display:block}
-.form-success-icon{
-  font-size:28px;
-  margin-bottom:10px;
-}
-.form-success-title{
-  font-family:var(--display);
-  font-size:18px;
-  color:var(--teal);
-  margin-bottom:6px;
-}
-.form-success-sub{
-  font-size:12px;
-  color:var(--muted);
 }
 
 .modal-overlay{
@@ -949,9 +932,9 @@ footer{
 
     <div class="app-card reveal">
       <div class="app-card-top">
-       <div class="app-icon icon-live">
-  <img src="anqo-icon.png" alt="Anqo app icon">
-</div>
+        <div class="app-icon icon-live">
+          <img src="anqo-icon.png" alt="Anqo app icon">
+        </div>
         <div class="app-meta">
           <span class="app-status status-live">Live on App Store</span>
           <div class="app-name">Anqo</div>
@@ -1140,7 +1123,7 @@ footer{
 
       <p style="margin-top:20px;font-size:12px">
         Contact:
-        <strong style="color:var(--text)">ian@itsspres.com</strong>
+        <strong style="color:var(--text)">support@itsspres.com</strong>
       </p>
 
       <div class="contact-links">
@@ -1149,31 +1132,39 @@ footer{
           <span class="cl-label">github.com/itsspres</span>
           <span>→</span>
         </a>
-        <a href="mailto:ian@itsspres.com" class="contact-link">
+        <a href="mailto:support@itsspres.com" class="contact-link">
           <span>◉</span>
-          <span class="cl-label">ian@itsspres.com</span>
+          <span class="cl-label">support@itsspres.com</span>
           <span>→</span>
         </a>
       </div>
     </div>
 
     <div class="reveal">
-      <div class="support-form" id="supportForm">
+      <form class="support-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="ebe9f2b6-45d6-45b6-9973-3208898b408b">
+        <input type="hidden" name="subject" value="ItsSpres App Support Request">
+        <input type="hidden" name="from_name" value="ItsSpres Support Form">
+        <input type="hidden" name="redirect" value="https://itsspres.com/#support">
+
+        <input type="checkbox" name="botcheck" style="display:none">
+
         <div class="form-row">
           <div class="field">
             <label for="sf-name">Name</label>
-            <input type="text" id="sf-name" placeholder="Your name">
+            <input type="text" id="sf-name" name="name" placeholder="Your name">
           </div>
+
           <div class="field">
             <label for="sf-email">Email *</label>
-            <input type="email" id="sf-email" placeholder="you@example.com">
+            <input type="email" id="sf-email" name="email" placeholder="you@example.com" required>
           </div>
         </div>
 
         <div class="form-row">
           <div class="field">
             <label for="sf-app">App</label>
-            <select id="sf-app">
+            <select id="sf-app" name="app">
               <option value="">Select…</option>
               <option value="Anqo">Anqo</option>
               <option value="WireGuard Manager">WireGuard Manager</option>
@@ -1183,7 +1174,7 @@ footer{
 
           <div class="field">
             <label for="sf-type">Type</label>
-            <select id="sf-type">
+            <select id="sf-type" name="type">
               <option value="">Select…</option>
               <option value="Bug Report">Bug Report</option>
               <option value="Feature Request">Feature Request</option>
@@ -1194,21 +1185,17 @@ footer{
         </div>
 
         <div class="field">
-          <label for="sf-message">Message</label>
-          <textarea id="sf-message" placeholder="Describe the issue or request…"></textarea>
+          <label for="sf-message">Message *</label>
+          <textarea id="sf-message" name="message" placeholder="Describe the issue or request…" required></textarea>
         </div>
+
+        <div class="h-captcha" data-captcha="true"></div>
 
         <div class="form-submit">
-          <span class="form-note">* Email required</span>
-          <button class="btn-submit" id="submitBtn" onclick="handleSubmit()">Send →</button>
+          <span class="form-note">* Required</span>
+          <button class="btn-submit" type="submit">Send →</button>
         </div>
-      </div>
-
-      <div class="form-success" id="formSuccess">
-        <div class="form-success-icon">✓</div>
-        <div class="form-success-title">Message sent</div>
-        <div class="form-success-sub">I’ll get back to you soon.</div>
-      </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1266,7 +1253,7 @@ const CONTENT = {
       <h3>On-Device Processing</h3>
       <p>
         The following features are processed entirely on your device and are not
-        transmitted to Ian Spresney or any external server:
+        transmitted to ItsSpres or any external server:
       </p>
       <ul>
         <li>Flashcard and deck creation, editing, and review</li>
@@ -1279,7 +1266,7 @@ const CONTENT = {
       <p>
         Anqo uses Apple CloudKit to sync your decks, cards, and study progress
         across your Apple devices. This data is stored in your personal iCloud
-        account and is not accessible to Ian Spresney.
+        account and is not accessible to ItsSpres.
       </p>
       <p>
         iCloud sync is subject to Apple's privacy policy, available at
@@ -1291,7 +1278,7 @@ const CONTENT = {
       <p>
         AI-powered features in Anqo, including note import and quiz generation,
         use Apple Intelligence and run entirely on-device. No content you provide
-        is sent to Ian Spresney or any third-party AI service.
+        is sent to ItsSpres or any third-party AI service.
       </p>
       <p>
         Apple Intelligence requires a compatible device and is governed by
@@ -1316,7 +1303,7 @@ const CONTENT = {
       <h3>Purchases</h3>
       <p>
         In-app purchases and subscriptions are processed entirely by Apple through
-        the App Store. Ian Spresney does not receive or store your payment
+        the App Store. ItsSpres does not receive or store your payment
         information. Purchase records are managed by Apple and are subject to
         Apple’s privacy policy.
       </p>
@@ -1339,7 +1326,7 @@ const CONTENT = {
       <h3>Contact</h3>
       <p>
         Questions about this policy? Reach out through the support page or email
-        <strong>ian@itsspres.com</strong>.
+        <strong>support@itsspres.com</strong>.
       </p>
     `
   },
@@ -1356,7 +1343,7 @@ const CONTENT = {
 
       <h3>License to Use</h3>
       <p>
-        Ian Spresney grants you a limited, non-exclusive, non-transferable,
+        ItsSpres grants you a limited, non-exclusive, non-transferable,
         revocable license to use Anqo for personal, non-commercial purposes on
         Apple devices you own or control, subject to these terms and Apple’s App
         Store Terms of Service.
@@ -1370,7 +1357,7 @@ const CONTENT = {
       <p>
         You retain ownership of any flashcard content, decks, and notes you create
         in Anqo. Because all content is stored locally on your device and in your
-        personal iCloud account, Ian Spresney has no access to or claim over your
+        personal iCloud account, ItsSpres has no access to or claim over your
         content.
       </p>
       <p>
@@ -1398,7 +1385,7 @@ const CONTENT = {
         premium subscription removes all advertising.
       </p>
       <p>
-        Ian Spresney is not responsible for the content of third-party
+        ItsSpres is not responsible for the content of third-party
         advertisements.
       </p>
 
@@ -1414,14 +1401,14 @@ const CONTENT = {
       <h3>Disclaimer of Warranties</h3>
       <p>
         Anqo is provided “as is” without warranties of any kind, express or
-        implied. Ian Spresney does not warrant that the app will be error-free,
+        implied. ItsSpres does not warrant that the app will be error-free,
         uninterrupted, or meet your specific requirements. Use of the app is at
         your own risk.
       </p>
 
       <h3>Limitation of Liability</h3>
       <p>
-        To the fullest extent permitted by law, Ian Spresney shall not be liable
+        To the fullest extent permitted by law, ItsSpres shall not be liable
         for any indirect, incidental, special, or consequential damages arising
         from your use of Anqo, including loss of data.
       </p>
@@ -1439,15 +1426,13 @@ const CONTENT = {
 
       <h3>Governing Law</h3>
       <p>
-        These Terms are governed by the laws of the United States. Any disputes
-        arising from use of Anqo shall be subject to the exclusive jurisdiction of
-        the courts in Ian Spresney’s state of residence.
+        These Terms are governed by the laws of the United States.
       </p>
 
       <h3>Contact</h3>
       <p>
         Questions about these terms? Reach out through the support page or email
-        <strong>ian@itsspres.com</strong>.
+        <strong>support@itsspres.com</strong>.
       </p>
     `
   },
@@ -1479,7 +1464,7 @@ const CONTENT = {
 
       <h3>Contact</h3>
       <p>
-        Questions? Email <strong>ian@itsspres.com</strong>.
+        Questions? Email <strong>support@itsspres.com</strong>.
       </p>
     `
   },
@@ -1511,7 +1496,7 @@ const CONTENT = {
 
       <h3>Contact</h3>
       <p>
-        Questions? Email <strong>ian@itsspres.com</strong>.
+        Questions? Email <strong>support@itsspres.com</strong>.
       </p>
     `
   }
@@ -1538,37 +1523,9 @@ function closeModalOutside(event) {
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeModal();
 });
-
-function handleSubmit() {
-  const email = document.getElementById("sf-email").value.trim();
-  const message = document.getElementById("sf-message").value.trim();
-
-  if (!email) {
-    document.getElementById("sf-email").focus();
-    return;
-  }
-
-  const button = document.getElementById("submitBtn");
-  button.textContent = "Sending…";
-  button.disabled = true;
-
-  const name = document.getElementById("sf-name").value.trim();
-  const app = document.getElementById("sf-app").value;
-  const type = document.getElementById("sf-type").value;
-
-  const subject = encodeURIComponent(`[${app || "App"} Support] ${type || "Request"}`);
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\nApp: ${app}\nType: ${type}\n\n${message}`
-  );
-
-  window.location.href = `mailto:ian@itsspres.com?subject=${subject}&body=${body}`;
-
-  setTimeout(() => {
-    document.getElementById("supportForm").style.display = "none";
-    document.getElementById("formSuccess").classList.add("show");
-  }, 600);
-}
 </script>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
 
 </body>
 </html>
