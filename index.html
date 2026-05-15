@@ -273,6 +273,13 @@ nav{
   flex-shrink:0;
   border:1px solid rgba(255,255,255,.06);
 }
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
 .icon-live{background:linear-gradient(135deg,#1c1c42,#0e0e26)}
 .icon-wip{background:linear-gradient(135deg,#0e2e1c,#091a0f)}
 .app-status{
@@ -942,7 +949,9 @@ footer{
 
     <div class="app-card reveal">
       <div class="app-card-top">
-        <div class="app-icon icon-live">⚡</div>
+       <div class="app-icon icon-live">
+  <img src="anqo-icon.png" alt="Anqo app icon">
+</div>
         <div class="app-meta">
           <span class="app-status status-live">Live on App Store</span>
           <div class="app-name">Anqo</div>
